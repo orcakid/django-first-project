@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block cont %}
+<main class="container">
+    <div class="row">
+        <div class="col-md-6.offset-md-3">
+            <h1>Tasks</h1>
+            <ul class="list-group">
+                {% for i in task %}
+                {% if i.date_completed is None %}
+                <li class="list-group-item">
+                    <a href="{% url 'task_detail' i.id %}">
+                        <h2>{{i.title}}</h2>
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}
+</body>
+</html>

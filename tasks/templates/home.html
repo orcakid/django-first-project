@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block cont %}
+    <div class="text-center">
+        <h1>It's home page</h1>
+        <p>Welcome to the task app</p>
+        <p>Create, complete and enjoy!</p>
+        <a class="btn btn-secondary" href="/signin/"> Signin</a>
+        <a class="btn btn-dark" href="/signup/"> Signup</a>
+    </div>
+
+    {% endblock %}
+</body>
+</html>

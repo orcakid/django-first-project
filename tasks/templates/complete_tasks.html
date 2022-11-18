@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block cont %}
+    <h1>Completes Tasks</h1>
+    <ul>
+        {% for i in tasks %}
+        {% if i.date_completed is not None %}
+        <li>
+            <h2>{{i.title}}</h2>
+            <p> Date completed: {{i.date_completed}}</p>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endblock %}
+
+</body>
+</html>

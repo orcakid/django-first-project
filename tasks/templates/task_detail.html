@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block cont %}
+    <h3>Description: </h3>
+    <h4>{{task.description}}</h4>
+    <p>task by <strong>{{task.user.username}}</strong></p>
+    {{error}}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>
+            Update
+        </button>
+    </form>
+    <form action="{% url 'task_complete' task.id %}" method="POST">
+        {% csrf_token %}
+        <button>
+            Complete
+        </button>
+    </form>
+    <form action="{% url 'task_delete' task.id %}" method="POST">
+        {% csrf_token %}
+        <button>
+            Delete
+        </button>
+    </form>
+    {% endblock %}
+
+</body>
+</html>

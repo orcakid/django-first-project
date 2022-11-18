@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      {% extends 'base.html' %}
+      {% block cont %}
+      <h1>Create task</h1>
+      {{error}}
+      <form action="/tasks/create/" method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button>
+              Save Task
+          </button>
+
+      </form>
+
+      {% endblock %}
+</body>
+</html>
